@@ -1,0 +1,30 @@
+import React from 'react';
+// Componente de navegação ela vai por volta de todos as rotas
+import { NavigationContainer } from '@react-navigation/native'
+// Import o componente de navegação por botões
+import { createStackNavigator } from '@react-navigation/stack';
+
+
+// Criando primeira novegação
+const AppStack = createStackNavigator();
+
+// Importando as paginas
+import Incidents from './pages/Incidents';
+import Detail from './pages/Detail';
+
+export default function Routes() {
+    return (
+        <NavigationContainer>
+            <AppStack.Navigator screenOptions={{headerShown: false }}>
+                <AppStack.Screen 
+                    name="Incidents" 
+                    component={Incidents} />
+                <AppStack.Screen 
+                    name="Detail" 
+                    component={Detail} />
+            </AppStack.Navigator>
+        </NavigationContainer>
+    );
+}
+
+
